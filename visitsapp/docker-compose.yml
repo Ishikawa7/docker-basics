@@ -1,0 +1,11 @@
+version: '3'
+services:
+  #create a container using redis image
+  redis-server:
+    image: 'redis'
+  #create a container using a dockerfile
+  node-app:
+    restart: always
+    build: . #serch in the workdir
+    ports:
+      - "4001:8081"
